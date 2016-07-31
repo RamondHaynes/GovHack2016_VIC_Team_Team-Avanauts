@@ -1,0 +1,54 @@
+{
+    "name": "InputPatentLocation",
+    "properties": {
+        "structure": [
+            {
+                "name": "Column0",
+                "type": "String"
+            },
+            {
+                "name": "Column1",
+                "type": "String"
+            },
+            {
+                "name": "Column2",
+                "type": "Double"
+            },
+            {
+                "name": "Column3",
+                "type": "Double"
+            },
+            {
+                "name": "Column4",
+                "type": "String"
+            },
+            {
+                "name": "Column5",
+                "type": "String"
+            },
+            {
+                "name": "Column6",
+                "type": "Int64"
+            }
+        ],
+        "published": false,
+        "type": "AzureBlob",
+        "linkedServiceName": "SA1GovHackDataBlob",
+        "typeProperties": {
+            "fileName": "patent-lon-lat.csv",
+            "folderPath": "vic",
+            "format": {
+                "type": "TextFormat",
+                "rowDelimiter": "\n",
+                "columnDelimiter": ",",
+                "quoteChar": "\""
+            }
+        },
+        "availability": {
+            "frequency": "Month",
+            "interval": 1
+        },
+        "external": true,
+        "policy": {}
+    }
+}

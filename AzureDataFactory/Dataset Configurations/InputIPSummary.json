@@ -1,0 +1,85 @@
+{
+    "name": "InputIPSummary",
+    "properties": {
+        "structure": [
+            {
+                "name": "Column0",
+                "type": "String"
+            },
+            {
+                "name": "Column1",
+                "type": "String"
+            },
+            {
+                "name": "Column2",
+                "type": "Int64"
+            },
+            {
+                "name": "Column3",
+                "type": "String"
+            },
+            {
+                "name": "Column4",
+                "type": "String"
+            },
+            {
+                "name": "Column5",
+                "type": "String"
+            },
+            {
+                "name": "Column6",
+                "type": "String"
+            },
+            {
+                "name": "Column7",
+                "type": "String"
+            },
+            {
+                "name": "Column8",
+                "type": "String"
+            },
+            {
+                "name": "Column9",
+                "type": "String"
+            },
+            {
+                "name": "Column10",
+                "type": "Int64"
+            },
+            {
+                "name": "Column11",
+                "type": "Int64"
+            },
+            {
+                "name": "Column12",
+                "type": "Int64"
+            },
+            {
+                "name": "Column13",
+                "type": "Int64"
+            },
+            {
+                "name": "Column14",
+                "type": "String"
+            }
+        ],
+        "published": false,
+        "type": "AzureBlob",
+        "linkedServiceName": "SA1GovHackDataBlob",
+        "typeProperties": {
+            "fileName": "IPGOD101-Summary.csv",
+            "folderPath": "vic",
+            "format": {
+                "type": "TextFormat",
+                "rowDelimiter": "\n",
+                "columnDelimiter": ","
+            }
+        },
+        "availability": {
+            "frequency": "Month",
+            "interval": 1
+        },
+        "external": true,
+        "policy": {}
+    }
+}

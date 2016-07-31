@@ -1,0 +1,79 @@
+{
+    "name": "OutputIPSummary",
+    "properties": {
+        "structure": [
+            {
+                "name": "ApplicationNo",
+                "type": "String"
+            },
+            {
+                "name": "ApplicationDate",
+                "type": "String"
+            },
+            {
+                "name": "ApplicationYear",
+                "type": "Int32"
+            },
+            {
+                "name": "Country",
+                "type": "String"
+            },
+            {
+                "name": "State",
+                "type": "String"
+            },
+            {
+                "name": "Postcode",
+                "type": "String"
+            },
+            {
+                "name": "Status",
+                "type": "String"
+            },
+            {
+                "name": "PatentType",
+                "type": "String"
+            },
+            {
+                "name": "PrimaryIPCMark",
+                "type": "String"
+            },
+            {
+                "name": "OPIDate",
+                "type": "String"
+            },
+            {
+                "name": "ApplicantNo",
+                "type": "Int32"
+            },
+            {
+                "name": "Australian",
+                "type": "Int16"
+            },
+            {
+                "name": "Entity",
+                "type": "Int32"
+            },
+            {
+                "name": "Big",
+                "type": "Int32"
+            },
+            {
+                "name": "FilingNPEDate",
+                "type": "String"
+            }
+        ],
+        "published": false,
+        "type": "AzureSqlTable",
+        "linkedServiceName": "GovHackDB",
+        "typeProperties": {
+            "tableName": "GovHackVic.StageIPSummary"
+        },
+        "availability": {
+            "frequency": "Month",
+            "interval": 1
+        },
+        "external": false,
+        "policy": {}
+    }
+}
