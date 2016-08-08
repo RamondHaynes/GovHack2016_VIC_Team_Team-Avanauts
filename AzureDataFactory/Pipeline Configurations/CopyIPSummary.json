@@ -1,0 +1,55 @@
+{
+    "name": "CopyIPSummary",
+    "properties": {
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "BlobSource",
+                        "skipHeaderLineCount": 1,
+                        "recursive": false
+                    },
+                    "sink": {
+                        "type": "SqlSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    },
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "columnMappings": "Column0:ApplicationNo,Column1:ApplicationDate,Column2:ApplicationYear,Column3:Country,Column4:State,Column5:Postcode,Column6:Status,Column7:PatentType,Column8:PrimaryIPCMark,Column9:OPIDate,Column10:ApplicantNo,Column11:Australian,Column12:Entity,Column13:Big,Column14:FilingNPEDate"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputIPSummary"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputIPSummary"
+                    }
+                ],
+                "policy": {
+                    "timeout": "01:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 1,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Month",
+                    "interval": 1
+                },
+                "name": "CopyActivity-IPSummary"
+            }
+        ],
+        "start": "2016-06-01T00:00:00Z",
+        "end": "2016-06-30T00:00:00Z",
+        "isPaused": false,
+        "hubName": "sa1vicgovhackddf_hub",
+        "pipelineMode": "Scheduled"
+    }
+}

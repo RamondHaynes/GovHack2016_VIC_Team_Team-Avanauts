@@ -1,0 +1,55 @@
+{
+    "name": "CopyPatentLocationData",
+    "properties": {
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "BlobSource",
+                        "skipHeaderLineCount": 1,
+                        "recursive": false
+                    },
+                    "sink": {
+                        "type": "SqlSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    },
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "columnMappings": "Column0:ApplicationNo,Column1:Name,Column2:Latitude,Column3:Longitude,Column4:ApplicantType,Column5:PatentType,Column6:ApplicationYear"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputPatentLocation"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputPatentLocation"
+                    }
+                ],
+                "policy": {
+                    "timeout": "01:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 1,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Month",
+                    "interval": 1
+                },
+                "name": "CopyActivity-PatentLocation"
+            }
+        ],
+        "start": "2016-06-01T00:00:00Z",
+        "end": "2016-06-30T00:00:00Z",
+        "isPaused": false,
+        "hubName": "sa1vicgovhackddf_hub",
+        "pipelineMode": "Scheduled"
+    }
+}

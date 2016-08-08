@@ -1,0 +1,47 @@
+{
+    "name": "OutputPatentLocation",
+    "properties": {
+        "structure": [
+            {
+                "name": "ApplicationNo",
+                "type": "String"
+            },
+            {
+                "name": "Name",
+                "type": "String"
+            },
+            {
+                "name": "Latitude",
+                "type": "Decimal"
+            },
+            {
+                "name": "Longitude",
+                "type": "Decimal"
+            },
+            {
+                "name": "ApplicantType",
+                "type": "String"
+            },
+            {
+                "name": "PatentType",
+                "type": "String"
+            },
+            {
+                "name": "ApplicationYear",
+                "type": "Int32"
+            }
+        ],
+        "published": false,
+        "type": "AzureSqlTable",
+        "linkedServiceName": "GovHackDB",
+        "typeProperties": {
+            "tableName": "GovHackVic.PatentLocation"
+        },
+        "availability": {
+            "frequency": "Month",
+            "interval": 1
+        },
+        "external": false,
+        "policy": {}
+    }
+}
